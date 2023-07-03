@@ -1,0 +1,226 @@
+@charset "utf-8";
+
+/* 공통 */
+.title-box h3 {
+    margin-bottom: 15px;
+    font-size: 28px;
+    font-weight: 900;
+}
+
+.title-box p {
+    margin-bottom: 40px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* 헤더 */
+#sslo-header {
+    background: #000 url(../../../assets/images/sslo/main.gif) no-repeat center 0;
+}
+
+nav {
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8));
+}
+
+/* 인트로 */
+.intro-type2 {
+    position: relative;
+    width: 100%;
+    padding-top: 185px;
+    box-sizing: border-box;
+    height: 400px;
+    text-align: center;
+}
+
+.intro-type2 img {
+    width: 300px;
+}
+
+.intro-type2 h2 {
+    z-index: 20;
+    position: relative;
+    margin-top: 45px;
+    font-size: 28px;
+    font-weight: 900;
+}
+
+.intro-type2 b {
+    position: absolute;
+    top: 310px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 900;
+    font-size: 80px;
+    color: rgb#243654(134, 125, 125);
+    opacity: 0.1;
+}
+
+.intro-type2 p {
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.6;
+}
+
+/* 섹션1-제휴 */
+.partnership1 {
+    margin: auto;
+    width: 860px;
+    padding-bottom: 0;
+}
+
+.partnership1 h3 {
+    margin-bottom: 40px;
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.partnership1 .content-box {
+    display: flex;
+}
+
+.partnership1 .box-left {
+    width: 220px;
+    height: 80px;
+}
+
+.partnership1 .box-left li {
+    padding-top: 10px;
+    box-sizing: border-box;
+    height: 80px;
+}
+
+.partnership1 h4 {
+    font-size: 20px;
+}
+
+.partnership1 .box-right {
+    flex-grow: 1;
+    font-size: 18px;
+}
+
+.partnership1 .box-right li {
+    height: 80px;
+}
+
+.partnership1 .box-right select {
+    padding: 0 15px;
+    width: 100%;
+    border: 1px solid #1B5994;
+    border-radius: 5px;
+    height: 40px;
+    font-size: 16px;
+    color: #7d7d7d;
+}
+
+.partnership1 .box-right input {
+    padding: 0 15px;
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid #1B5994;
+    border-radius: 5px;
+    height: 40px;
+    font-size: 16px;
+    color: #7d7d7d;
+}
+
+.partnership1 .box-right textarea {
+    padding: 15px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 200px;
+    resize: none;
+    border: 1px solid #1B5994;
+    border-radius: 5px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #7d7d7d;
+}
+
+.partnership1 ul .textarea-box {
+    height: 240px;
+}
+
+.partnership1 .offer {
+    display: flex;
+    position: relative;
+}
+
+.partnership1 .offer .upload-name {
+    padding-right: 105px;
+    width: 100%;
+}
+
+.offer label {
+    position: absolute;
+    right: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 90px;
+    height: 40px;
+    background: #1B5994;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 900;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.partnership1 .offer .input-flie {
+    display: none;
+}
+
+/* 섹션2-정보 */
+.partnership2 {
+    padding-bottom: 150px;
+}
+
+.partnership2 .check1 {
+    display: flex;
+}
+
+.partnership2 .check1 input {
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+}
+
+.partnership2 .check1 p {
+    margin-top: -3px;
+    font-size: 16px;
+    line-height: 1.5;
+    font-size: 18px;
+}
+
+.submit {
+    width: 100%;
+    height: 60px;
+    background: #1B5994;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 900;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.partnership2 .address {
+    display: flex;
+}
+
+.partnership2 .address input {
+    width: 500px;
+    border-radius: 5px 0 0 5px;
+}
+
+.partnership2 .address button {
+    width: 150px;
+    height: 40px;
+    background: #1B5994;
+    color: #fff;
+    font-weight: 800;
+    font-size: 16px;
+    border-radius: 0 5px 5px 0;
+}

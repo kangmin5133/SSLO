@@ -1,0 +1,201 @@
+@charset "utf-8";
+
+/* 공통 */
+.title-box h3 {
+  margin-bottom: 15px;
+  font-size: 28px;
+  font-weight: 900;
+}
+
+.title-box p {
+  margin-bottom: 40px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* 헤더 */
+#sslo-header {
+  background: #000 url(../../../assets/images/sslo/main.gif) no-repeat center 0;
+}
+
+nav {
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8));
+}
+
+/* 인트로 */
+.intro-type2 {
+  position: relative;
+  width: 100%;
+  padding-top: 185px;
+  box-sizing: border-box;
+  height: 400px;
+  text-align: center;
+}
+
+.intro-type2 img {
+  width: 300px;
+}
+
+.intro-type2 h2 {
+  z-index: 20;
+  position: relative;
+  margin-top: 45px;
+  font-size: 28px;
+  font-weight: 900;
+  color:#243654;
+}
+
+.intro-type2 b {
+  position: absolute;
+  top: 310px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 900;
+  font-size: 88px;
+  color: rgb#243654(134, 125, 125);
+  opacity: 0.1;
+}
+
+.intro-type2 p {
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+/* 섹션1-게시판 */
+.customer1 {
+  width: 1080px;
+  margin: auto;
+}
+
+/* 테이블 상단바 */
+.customer1 .table-bar {
+  display: flex;
+  margin: auto;
+  padding-bottom: 10px;
+  justify-content: space-between;
+  border-bottom: 3px solid #1b5994;
+}
+
+.customer1 .category button {
+  margin-right: 20px;
+  padding: 15px 20px;
+  background: #fff;
+  color: #1b5994;
+  font-weight: 900;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.customer1 .category button:first-child {
+  background: #1b5994;
+  color: #fff;
+}
+
+.customer1 .search {
+  position: relative;
+}
+
+.customer1 .search input {
+  margin-top: 4px;
+  padding: 5px 50px 5px 10px;
+  width: 300px;
+  height: 40px;
+  box-sizing: border-box;
+  border: 1px solid #1b5994;
+  border-radius: 5px;
+  letter-spacing: 0;
+}
+
+.customer1 .search button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.customer1 .search button img {
+  width: 30px;
+}
+
+/* 테이블 하단내용 */
+.customer1 table {
+  width: 100%;
+}
+
+.customer1 table tr {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+}
+
+.customer1 table td {
+  padding: 20px 0;
+  border-bottom: 1px solid #aaa;
+}
+
+.customer1 table .tag {
+  width: 200px;
+  text-align: center;
+}
+
+.customer1 table .title {
+  flex-grow: 1;
+  font-weight: 700;
+  cursor: pointer;
+  height: 26px;
+  line-height: 30px;
+}
+
+.customer1 table .date {
+  width: 200px;
+  text-align: center;
+  height: 26px;
+  line-height: 30px;
+}
+
+/* 페이지 버튼 */
+.pager {
+  display: flex;
+  margin-top: 60px;
+  justify-content: center;
+}
+
+.pager button {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  margin-right: 15px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  font-size: 20px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.pager .left {
+  margin-right: 25px;
+}
+
+.pager .right {
+  margin: 0 0 0 10px;
+}
+
+/* 현재페이지 */
+.pager .pagenum1 {
+  background: #1b5994;
+  color: #fff;
+}
+
+.lnb .now .now-bar {
+  width: 205px;
+  box-sizing: border-box;
+  height: 10px;
+  border-radius: 5px;
+  background: #1b5994;
+}
+
+

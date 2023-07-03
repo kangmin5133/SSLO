@@ -1,0 +1,2 @@
+import MyPageContactDetailContainer from "./MyPageContactDetailContainer";
+export default MyPageContactDetailContainer;

@@ -1,0 +1,331 @@
+@charset "utf-8";
+
+/* 공통 */
+.title-box h3 {
+  margin-bottom: 15px;
+  font-size: 28px;
+  font-weight: 900;
+}
+
+.title-box p {
+  margin-bottom: 40px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* 헤더 */
+#sslo-header {
+  background: #000 url(../../../assets/images/sslo/main.gif) no-repeat center 0;
+}
+
+nav {
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8));
+}
+
+/* 인트로 */
+.intro-type2 {
+  position: relative;
+  width: 100%;
+  padding-top: 185px;
+  box-sizing: border-box;
+  height: 400px;
+  text-align: center;
+}
+
+.intro-type2 img {
+  width: 300px;
+}
+
+.intro-type2 h2 {
+  z-index: 20;
+  position: relative;
+  margin-top: 45px;
+  font-size: 28px;
+  font-weight: 900;
+}
+
+.intro-type2 b {
+  position: absolute;
+  top: 310px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 900;
+  font-size: 88px;
+  color: rgb#243654(134, 125, 125);
+  opacity: 0.1;
+}
+
+.intro-type2 p {
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+/* 섹션1-게시판 */
+.sec_contact_detail {
+  width: 40%;
+  margin: auto;
+}
+
+.sec_contact_detail table {
+  width: 100%;
+  font-size: 18px;
+  line-height: 1.6;
+  border: 1px solid #243654;
+}
+
+.sec_contact_detail table tr {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+}
+
+.sec_contact_detail table th {
+  display: flex;
+  min-width: 200px;
+  padding: 20px 0;
+  height: 100%;
+  min-height: 30px;
+  justify-content: center;
+  align-items: center;
+  background: #243654;
+  color: #fff;
+  border-bottom: 1px solid #aaa;
+}
+
+.sec_contact_detail table td {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-height: 30px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #243654;
+}
+
+.sec_contact_detail table tr:last-child th {
+  border-bottom: none;
+}
+
+.sec_contact_detail table tr:last-child td {
+  border-bottom: none;
+}
+
+/* 섹션1-게시판 */
+.sec_contact_detail_modify {
+  width: 40%;
+  margin: auto;
+}
+
+.sec_contact_detail_modify table {
+  width: 100%;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.sec_contact_detail_modify table tr {
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+}
+
+.sec_contact_detail_modify table th {
+  display: flex;
+  min-width: 200px;
+  padding: 20px 0;
+  height: 100%;
+  min-height: 30px;
+  justify-content: center;
+  align-items: center;
+  color: #243654;
+}
+
+.sec_contact_detail_modify table td {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-height: 30px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.sec_contact_detail_modify table tr:last-child {
+  align-items: baseline;
+}
+
+.sec_contact_detail_modify table tr:last-child th {
+  border-bottom: none;
+}
+
+.sec_contact_detail_modify table tr:last-child td {
+  border-bottom: none;
+}
+
+.sec_contact_detail_modify table select {
+  padding: 0 15px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  font-size: 16px;
+  border: 1px solid #1b5994;
+  border-radius: 5px;
+  color: #7d7d7d;
+}
+
+.sec_contact_detail_modify table input {
+  display: block;
+  padding: 0 15px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  font-size: 16px;
+  border: 1px solid #1b5994;
+  border-radius: 5px;
+  color: #7d7d7d;
+}
+
+.sec_contact_detail_modify table textarea {
+  padding: 15px;
+  resize: none;
+  width: 100%;
+  height: 200px;
+  border: 1px solid #1b5994;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* 페이지 버튼 */
+.pager {
+  display: flex;
+  margin-top: 60px;
+  justify-content: center;
+}
+
+.pager button {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  margin-right: 15px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  font-size: 20px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.pager .left {
+  margin-right: 25px;
+}
+
+.pager .right {
+  margin: 0 0 0 10px;
+}
+
+/* 현재페이지 */
+.pager .pagenum1 {
+  background: #1b5994;
+  color: #fff;
+}
+
+/* 테이블1 */
+.table1 input {
+  border: none;
+  background: #e8f5ff;
+  width: 200px;
+  height: 30px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  font-size: 16px;
+  border: 1px solid #243654;
+}
+
+/* 버튼박스 */
+.button-box {
+  padding-top: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  
+}
+
+.button-box a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 40px;
+  background: #fff;
+  box-sizing: border-box;
+  border: 1px solid #243654;
+  color: #243654;
+  font-weight: 700;
+  margin-left: 20px;
+  font-size: 16px;
+
+}
+
+.button-box button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 40px;
+  background: #fff;
+  box-sizing: border-box;
+  border: 1px solid #243654;
+  color: #243654;
+  font-weight: 700;
+  margin-left: 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button-box .modify {
+  background: #243654;
+  color: #fff;
+}
+
+.button-box .btn-modify {
+  background: #243654;
+  color: #fff;
+}
+
+.button-box .btn-list {
+  background: #fff;
+  color: #243654;
+}
+
+.button-box .btn-quit {
+  background: #ff4343;
+  border: #ff4343;
+  color: #fff;
+}
+
+.password-modify-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 30px;
+  background: #1b5994;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.lnb .now .now-bar {
+  width: 205px;
+  box-sizing: border-box;
+  height: 10px;
+  border-radius: 5px;
+  background: #1b5994;
+}
+

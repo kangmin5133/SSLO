@@ -1,0 +1,319 @@
+@charset "utf-8";
+
+/* 인트로 */
+.intro {
+  width: 100%;
+  padding-top: 180px;
+  box-sizing: border-box;
+  height: 480px;
+  text-align: center;
+  background: #ddd;
+  background: #010406 url(../../../assets/images/sslo/main.gif) no-repeat center
+    0;
+  color: #fff;
+}
+
+.intro img {
+  width: 300px;
+}
+
+.intro h2 {
+  position: relative;
+  margin-top: 40px;
+  font-size: 28px;
+  font-weight: 900;
+  text-shadow: 0 0 3px #000;
+}
+
+.intro p {
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: 700;
+  text-shadow: 0 0 5px #000;
+}
+
+/* 섹션1 - 데이터 구축 서비스 */
+.line::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+.line2 {
+  margin-top: 20px;
+}
+
+.line li {
+  margin-right: 20px;
+  float: left;
+  overflow: hidden;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 3px 3px 7px #ccc;
+  transition: 0.3s;
+}
+
+.line li:last-child {
+  margin-right: 0;
+}
+
+.line li:hover {
+  margin-top: -10px;
+  box-shadow: 10px 10px 10px #ddd;
+}
+
+.line1 li {
+  width: 420px;
+  height: 230px;
+}
+
+.line2 li {
+  width: 310px;
+  height: 230px;
+}
+
+.line li .top {
+  padding-top: 30px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 80px;
+  font-size: 22px;
+  font-weight: 900;
+  color: #fff;
+}
+
+.line li .bottom {
+  padding-top: 40px;
+  box-sizing: border-box;
+  font-size: 18px;
+  line-height: 1.6;
+  font-weight: 700;
+}
+
+.top1 {
+  background: linear-gradient(30deg, #3580e3, #8579f3);
+}
+
+.top2 {
+  background: linear-gradient(30deg, #8579f3, #b578ef);
+}
+
+.top3 {
+  background: linear-gradient(30deg, #b578ef, #d964b6);
+}
+
+.top4 {
+  background: linear-gradient(30deg, #d964b6, #de61a6);
+}
+
+.top5 {
+  background: linear-gradient(30deg, #de61a6, #f26a84);
+}
+
+.top6 {
+  background: linear-gradient(30deg, #f26a84, #ff4343);
+}
+
+.top7 {
+  background: linear-gradient(30deg, #ff4343, #ef9878);
+}
+
+.service1 {
+  padding: 100px 0;
+  padding-top: 80px;
+}
+/* 섹션2 - 데이터 구축 프로세스 */
+/* 바 */
+.service2 {
+  padding: 100px 0;
+  padding-top: 120px;
+}
+
+.service2 .img-box {
+  display: flex;
+  height: 10px;
+}
+
+.service2 .img-box .bar1 {
+  flex-grow: 1;
+  height: 10px;
+  border-radius: 5px;
+  background: linear-gradient(to right, #3580e3, #b578ef);
+  animation: long1 1s forwards;
+}
+
+.service2 .img-box .bar2 {
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  background: linear-gradient(to right, #b578ef, #ff4343);
+  animation: long2 1s 1s forwards;
+  opacity: 0;
+}
+
+@keyframes long1 {
+  from {
+    flex-grow: 0;
+  }
+
+  to {
+    flex-grow: 1;
+  }
+}
+
+@keyframes long2 {
+  from {
+    width: 0;
+    opacity: 1;
+  }
+
+  to {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+/* 화살표 */
+.arrow-box {
+  margin: 50px 0 10px 4px;
+  animation: arrow 2s 1s forwards;
+  opacity: 0;
+}
+
+@keyframes arrow {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* 내용 */
+.service2 ul {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.service2 ul li {
+  width: 20%;
+  opacity: 0;
+}
+
+.service2 li h4 {
+  margin: 25px 0 10px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.service2 li p {
+  line-height: 1.6;
+}
+
+.service2 .text-box2 li:first-child {
+  width: 400px;
+}
+
+.text-box1 li {
+  animation: arrow 1s forwards;
+}
+
+.text-box2 li {
+  animation: arrow 1s 1s forwards;
+}
+
+/* 섹션3-학습 데이터 셋 */
+.service3 {
+  text-align: center;
+  padding-top: 120px;
+}
+
+.service3 img {
+  width: 81%;
+}
+
+.service3 ul {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.service3 ul li {
+  width: 20%;
+  opacity: 0;
+  animation: arrow 1s forwards;
+}
+
+.service3 h4 {
+  margin: 20px 0 10px;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+/* 섹션4-대시보드 */
+.service4 {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-top: 120px;
+  padding-bottom: 80px;
+}
+
+.service4 .img-box {
+  width: 750px;
+}
+
+.service4 .img-box img {
+  width: 750px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.service4 .text-box {
+  width: 510px;
+  padding-bottom: 30px;
+}
+
+.service4 h4 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.service4 .info {
+  margin-top: 40px;
+}
+
+.service4 .info li {
+  margin-bottom: 15px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+
+.service4 .info span {
+  display: inline-block;
+  width: 60px;
+  height: 6px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.service4 .info li p {
+  font-size: 17px;
+}
+
+.service4 .info .ball1 {
+  background: linear-gradient(to right, #3580e3, #a06ad8);
+}
+
+.service4 .info .ball2 {
+  background: linear-gradient(to right, #b960cd, #ee3f9c);
+}
+
+.service4 .info .ball3 {
+  background: linear-gradient(to right, #f93787, #ff4343);
+}

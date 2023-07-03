@@ -1,0 +1,650 @@
+@charset "utf-8";
+
+/* 메인 영역 */
+.main-wrap {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 700px;
+  background: #010406 url(../../assets/images/sslo/main.gif) no-repeat center;
+}
+
+.main-wrap .inner-text {
+  padding-top: 270px;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+}
+
+.main-wrap .inner-text h3 {
+  position: absolute;
+  font-size: 36px;
+  color: #fff;
+  line-height: 1.3;
+  animation: textSlide 3s ease-out;
+}
+
+.main-wrap .inner-text img {
+  position: absolute;
+  margin-top: 120px;
+  width: 270px;
+  animation: textSlide 3s ease-out;
+}
+
+@keyframes textSlide {
+  from {
+    margin-left: -30%;
+    opacity: 0;
+  }
+  to {
+    margin-left: 0;
+    opacity: 1;
+  }
+}
+
+/* 타이틀 */
+.title-box {
+  text-align: center;
+}
+
+.title-box h3 {
+  margin: 150px 0 15px;
+  font-size: 28px;
+  font-weight: 900;
+}
+
+.title-box p {
+  margin-bottom: 40px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* 섹션1-인트로 */
+.section1 {
+  width: 100%;
+  height: 500px;
+  padding-top: 700px;
+  font-weight: bold;
+  text-align: center;
+  background: url(../../assets/images/sslo/section1-bg.png) no-repeat center
+    700px;
+  animation: fadein 6s;
+  -moz-animation: fadein 6s; /* Firefox */
+  -webkit-animation: fadein 6s; /* Safari and Chrome */
+  -o-animation: fadein 6s; /* Opera */
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+  0% {
+    transform: translateY(100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@-moz-keyframes fadein {
+  /* Firefox */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadein {
+  /* Safari and Chrome */
+  0% {
+    transform: translateY(100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadein {
+  /* Opera */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.section1 h3 {
+  margin: 110px 0 20px;
+  font-size: 28px;
+}
+
+.section1 h3 img {
+  margin: 0 15px 5px 0;
+  width: 150px;
+}
+
+.section1 p {
+  margin: 20px 0 60px;
+  font-size: 26px;
+  line-height: 1.6;
+}
+.intro-btn {
+  background-color: #093151;
+  color: #fff;
+  border-radius: 30px;
+  font-size: 22px;
+  padding: 13px 40px;
+  font-weight: 700;
+}
+.intro-btn:hover {
+  background: linear-gradient(to bottom, #748ffc, #9685ec, #c57cc3);
+  box-shadow: 4px 4px 4px rgb(150, 149, 149);
+  cursor: pointer;
+}
+
+.section3 .under-bar {
+  margin: auto;
+  width: 120px;
+  height: 10px;
+  border-radius: 10px;
+  background: linear-gradient(to right, #617cec, #8d79f3, #c175be, #f95663);
+  text-align: center;
+  align-items: center;
+}
+
+.tool-btn {
+  display: block;
+  background-color: #093151;
+  color: #fff;
+  border-radius: 30px;
+  font-size: 22px;
+  padding: 13px 40px;
+  font-weight: 700;
+  margin: 30px auto;
+}
+.tool-btn:hover {
+  background: linear-gradient(to bottom, #748ffc, #9685ec, #c57cc3);
+  box-shadow: 4px 4px 4px rgb(150, 149, 149);
+  cursor: pointer;
+}
+/* 섹션2-서비스 슬라이드 */
+.slide-wrap {
+  width: 100%;
+}
+
+.slide-wrap1 {
+  padding-bottom: 50px;
+}
+
+.slide-wrap2 {
+  padding-bottom: 130px;
+}
+
+/* 섹션2 공통 텍스트 */
+.section2 {
+  padding-top: 50px;
+  background: #f4f5f9;
+}
+
+.section2 h2 {
+  margin-top: 30px;
+  font-size: 24px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.section2 h2 b {
+  font-weight: 900;
+}
+
+/* 슬라이드 텍스트 */
+.section2 h3 {
+  position: relative;
+  top: 130px;
+  font-size: 48px;
+  font-weight: 900;
+}
+
+.slide-wrap2 h3 {
+  left: 840px;
+  width: 400px;
+}
+
+.slide-wrap .content-box {
+  display: flex;
+}
+
+.slide-text {
+  position: relative;
+  overflow: hidden;
+  width: 550px;
+  height: 500px;
+}
+.text {
+  animation: text 1s;
+  -moz-animation: text 1s; /* Firefox */
+  -webkit-animation: text 1s; /* Safari and Chrome */
+  -o-animation: text 1s; /* Opera */
+}
+@keyframes text {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+  0% {
+    transform: translateX(100px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@-moz-keyframes text {
+  /* Firefox */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes text {
+  /* Safari and Chrome */
+  0% {
+    transform: translateX(100px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes text {
+  /* Opera */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.slide-wrap2 .slide-text > li {
+  padding: 180px 0 0 90px;
+}
+
+.slide-text > li {
+  position: absolute;
+  top: 0;
+  left: 550px;
+  width: 550px;
+  height: 500px;
+  padding: 180px 90px 0 0;
+  box-sizing: border-box;
+}
+
+.slide-text > li:first-child {
+  left: 0;
+}
+
+/* 슬라이드 내용부분 */
+.slide-text h4 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.slide-text b {
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.slide-text p {
+  font-size: 18px;
+}
+
+.text-top {
+  height: 180px;
+}
+
+/* -- */
+.slide-text .check-list li {
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.check-list li img {
+  float: left;
+  margin-right: 15px;
+}
+
+.check-list li p {
+  margin-top: 3px;
+  float: left;
+}
+
+/* 슬라이드 이미지 */
+.slide-img {
+  position: relative;
+  overflow: hidden;
+  width: 700px;
+  height: 400px;
+  border-radius: 10px;
+}
+
+.slide-img li {
+  top: 0;
+  left: 750px;
+  width: 700px;
+  height: 400px;
+  display: flex;
+}
+
+.slide-img li:first-child {
+  left: 0px;
+}
+
+.slide-img1 {
+  background: linear-gradient(to right bottom, #3580e3, #8579f3);
+}
+
+.slide-img2 {
+  background: linear-gradient(to right bottom, #d964b6, #8579f3);
+}
+
+.slide-img img {
+  position: relative;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 슬라이드 버튼 */
+/* .slide-button {
+  z-index: 30;
+  position: relative;
+}
+
+.slide-button button {
+  position: absolute;
+  top: 250px;
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: 0.3s;
+  background: #24365442;
+}
+
+.slide-button button:hover {
+  background: #2436548a;
+}
+
+.slide-button .button-left {
+  left: -750px;
+} */
+
+/* 슬라이드 바 */
+/* .slide-bar {
+  position: relative;
+}
+
+.slide-bar-box {
+  position: absolute;
+  bottom: 35px;
+  left: -375px;
+  transform: translate(-50%, -50%);
+  width: 130px;
+}
+
+.slide-bar-box::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+.slide-bar .slide-bar-box div {
+  float: left;
+  margin-right: 20px;
+  width: 20px;
+  height: 10px;
+  border-radius: 5px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.slide-bar-box div:last-child {
+  margin-right: 0;
+}
+
+.slide-bar-box div:first-child {
+  width: 50px;
+} */
+
+/* 섹션 3-스스로 툴*/
+/* 툴바 */
+.tool-bar {
+  margin: 70px auto 30px;
+  overflow: hidden;
+  width: 1080px;
+  height: 60px;
+  border-radius: 30px;
+  background: #f1f1f1;
+}
+
+.tool-bar li {
+  float: left;
+  padding: 17px 0;
+  box-sizing: border-box;
+  width: 270px;
+  height: 60px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 900;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+/* 슬라이드영역 */
+.tool-slide {
+  position: relative;
+  overflow: hidden;
+  width: 1000px;
+  height: 500px;
+  border-radius: 10px;
+  background: #ccc;
+}
+
+.tool-slide div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1000px;
+  height: 500px;
+  background: #ccc;
+}
+
+.tool-slide .toolslide1 {
+  z-index: 20;
+}
+
+/* 섹션4 */
+.section4 {
+  background: url(../../assets/images/sslo/section4-bg.png) no-repeat center;
+}
+
+/* .img-box {
+    margin-top: -75px;
+    width: 1300px;
+    height: 1400px;
+} */
+
+.img-box::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+.img-box li {
+  position: relative;
+  float: left;
+  overflow: hidden;
+  width: 310px;
+  height: 360px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgba(58, 26, 110, 0.212);
+}
+
+.img-box li div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 310px;
+  height: 360px;
+  text-align: center;
+}
+
+.section4 .img-box li .bg-box {
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+}
+
+.img-box .bg-box img {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  bottom: 10px;
+  animation: mouseover 1s infinite;
+}
+
+@keyframes mouseover {
+  from {
+    bottom: 10px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 0.5;
+  }
+}
+
+.img-box li .content-box {
+  z-index: 20;
+  top: 360px;
+  width: 100%;
+  height: 100%;
+  background: #243654e5;
+  color: #fff;
+  backdrop-filter: blur(5px);
+  transition: 0.5s;
+}
+
+.img-box li h4 {
+  margin: 60px 0 10px;
+  font-size: 24px;
+}
+
+.section4 .content-box b {
+  margin-top: 170px;
+  display: inline-block;
+}
+
+/* 컨텐츠 이미지 */
+.case1 .bg-box {
+  background: url(../../assets/images/sslo/case1.png) no-repeat center 0;
+}
+
+.case2 .bg-box {
+  background: url(../../assets/images/sslo/case2.png) no-repeat center 0;
+}
+
+.case3 .bg-box {
+  background: url(../../assets/images/sslo/case3.png) no-repeat center 0;
+}
+
+.case4 .bg-box {
+  background: url(../../assets/images/sslo/case4.png) no-repeat center 0;
+}
+
+.case5 .bg-box {
+  background: url(../../assets/images/sslo/case5.png) no-repeat center 0;
+}
+
+.case6 .bg-box {
+  background: url(../../assets/images/sslo/case6.png) no-repeat center 0;
+}
+
+.case7 .bg-box {
+  background: url(../../assets/images/sslo/case7.png) no-repeat center 0;
+}
+
+/* 컨텐츠 배치 */
+.case1 {
+  top: 150px;
+}
+
+.case2 {
+  top: 360px;
+  left: 350px;
+}
+
+.section4 .case3 {
+  left: 370px;
+  height: 600px;
+}
+
+.section4 .case4 {
+  top: -70px;
+  left: 0;
+  width: 640px;
+  background: #ddd;
+}
+
+.section4 .case5 {
+  top: 140px;
+  left: 20px;
+}
+
+.section4 .case6 {
+  top: 20px;
+  left: 40px;
+  height: 360px;
+}
+
+.section4 .case7 {
+  top: -50px;
+  left: 330px;
+}
+
+.section4 .case3 .content-box {
+  top: 600px;
+}
+
+.section4 .case3 .content-box h4 {
+  margin-top: 180px;
+}
+
+/* 마우스오버 */
+.img-box li:hover .content-box {
+  top: 0;
+}
+
+.container {
+  width: 1300px;
+  margin: auto;
+}

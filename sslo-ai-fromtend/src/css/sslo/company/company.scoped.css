@@ -1,0 +1,225 @@
+@charset "utf-8";
+
+#container {
+  margin: auto;
+  width: 1300px;
+}
+
+/* 공통 */
+.title-box h3 {
+  margin-bottom: 15px;
+  font-size: 28px;
+  font-weight: 900;
+}
+
+.title-box p {
+  margin-bottom: 40px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* 헤더 */
+#sslo-header {
+  background: #000 url(../../../assets/images/sslo/main.gif) no-repeat center 0;
+}
+
+nav {
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8));
+}
+
+/* 인트로 */
+.intro-type2 {
+  position: relative;
+  width: 100%;
+  padding-top: 185px;
+  box-sizing: border-box;
+  height: 480px;
+  text-align: center;
+}
+
+.intro-type2 img {
+  width: 300px;
+}
+
+.intro-type2 h2 {
+  z-index: 20;
+  position: relative;
+  margin-top: 45px;
+  font-size: 28px;
+  font-weight: 900;
+}
+
+.intro-type2 b {
+  position: absolute;
+  top: 310px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 900;
+  font-size: 96px;
+  color: rgb#243654(134, 125, 125);
+  opacity: 0.1;
+}
+
+.intro-type2 p {
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+/* 섹션1 비전 */
+.info1 {
+  width: 100%;
+  height: 500px;
+  background: url(../../../assets/images/sslo/sub4/section1.png) no-repeat
+    center 0;
+  background-size: auto 500px;
+}
+
+/* 섹션2 연혁 */
+.info2 {
+  display: flex;
+  justify-content: center;
+  padding-top: 60px;
+}
+
+.info2 .img-box {
+  width: 200px;
+  flex-grow: 1;
+  background: url(../../../assets/images/sslo/sub4/section201.png) no-repeat
+    right 0;
+  border-radius: 0 50px 50px 0;
+}
+
+.info2 .text-box {
+  display: flex;
+  padding-left: 130px;
+  flex-grow: 1;
+}
+
+.info2 .text-box .box-left {
+  width: 155px;
+}
+
+.info2 .text-box .box-left span {
+  display: block;
+  width: 100%;
+  border-top: 4px solid #1b5994;
+}
+
+.info2 .text-box .box-left h3 {
+  margin-top: 20px;
+  font-size: 36px;
+  font-weight: 900;
+}
+
+.info2 .box-right {
+  flex-grow: 1;
+}
+
+.info2 .text-box .box-right span {
+  display: block;
+  margin-bottom: 20px;
+  width: 100%;
+  border-top: 1px solid #ccc;
+}
+
+.info2 .box-right p {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 2.3;
+}
+
+.line2022 {
+  height: 180px;
+}
+.line2021 {
+  height: 220px;
+}
+
+.line2020 {
+  height: 320px;
+}
+
+.line2019 {
+  height: 180px;
+}
+
+.line2018 {
+  height: 130px;
+}
+
+/* 섹션3-고객사 */
+.info3 {
+  text-align: center;
+}
+
+.info3 ul {
+  display: flex;
+  width: 1300px;
+  flex-wrap: wrap;
+}
+
+.info3 ul li {
+  position: relative;
+  width: 325px;
+  height: 200px;
+}
+
+.info3 ul li img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  backdrop-filter: seturate(0%);
+}
+
+.info3 ul li .filter {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: saturate(2%);
+}
+
+.info3 li:hover .filter {
+  backdrop-filter: saturate(100%);
+}
+
+/* 섹션4 지도 */
+.info4 {
+  display: flex;
+  width: 1300px;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.info4 .box-left {
+  width: 640px;
+}
+
+.info4 .box-right {
+  width: 640px;
+}
+
+.info4 .map {
+  width: 100%;
+  height: 400px;
+  background: #ccc;
+}
+
+.info4 h4 {
+  margin: 25px 0 10px;
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.info4 p {
+  font-size: 20px;
+  font-weight: 700;
+}
