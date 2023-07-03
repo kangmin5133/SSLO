@@ -1,0 +1,10 @@
+web:
+  image: nginx
+  volumes:
+    - ./conf.d.nginx:/etc/nginx/conf.d
+  ports:
+   - 80:80
+  restart: always
+  environment:
+   - NGINX_HOST=sslo.ai
+   - NGINX_PORT=80

@@ -1,0 +1,9 @@
+tritonclient[all]
+pycocotools
+scikit-image
+opencv-python==4.6.0.66
+Shapely==1.8.4
+tqdm
+
+flask
+docker 

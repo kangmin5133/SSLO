@@ -1,0 +1,40 @@
+version: '3.3'
+  
+services:
+
+  db-server-1:
+    image: mysql:8
+    command:
+        - --default-authentication-plugin=mysql_native_password
+        - --character-set-server=utf8mb4
+        - --collation-server=utf8mb4_unicode_ci
+    restart: always
+    container_name : db-server-1
+    environment:
+      MYSQL_ROOT_PASSWORD: tbell05
+      LANG: C.utf8
+      TZ: "Asia/Seoul"
+    volumes:
+      - ./mysql_master_data:/var/lib/mysql
+      - ./mysql_master.cnf:/etc/mysql/conf.d/master.cnf
+    ports:
+      - 1306:3306
+
+
+  db-server-2:
+    image: mysql:8
+    command:
+        - --default-authentication-plugin=mysql_native_password
+        - --character-set-server=utf8mb4
+        - --collation-server=utf8mb4_unicode_ci
+    restart: always
+    container_name : db-server-2
+    environment:
+      MYSQL_ROOT_PASSWORD: tbell05
+      LANG: C.utf8
+      TZ: "Asia/Seoul"
+    volumes:
+      - ./mysql_slave_data:/var/lib/mysql
+      - ./mysql_slave.cnf:/etc/mysql/conf.d/master.cnf
+    ports:
+      - 2306:3306

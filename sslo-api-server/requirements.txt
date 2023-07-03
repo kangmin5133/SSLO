@@ -1,0 +1,14 @@
+flask 
+flask_cors
+flask_jwt_extended
+pdoc
+bcrypt
+inject
+Pillow
+pymysql
+cryptography
+pypika
+pandas
+numpy
+requests
+gunicorn
