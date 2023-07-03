@@ -5,13 +5,13 @@ from werkzeug.exceptions import HTTPException
 
 import config
 from exception import ArgsException, ExceptionCode
+from flask_cors import CORS
 
 app = Flask(__name__)
 
 # config
 app.config.from_object( config.loaded )
-
-
+CORS(app, supports_credentials=True)
 #
 @app.errorhandler(ArgsException)
 def _handle_server_error(argException:ArgsException):

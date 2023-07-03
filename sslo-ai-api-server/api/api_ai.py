@@ -2,27 +2,35 @@ import os
 from flask import Flask, request, Response, Blueprint, send_file
 import json
 import ast
+import inject
 from werkzeug.datastructures import FileStorage
-import config
+
 from matplotlib.font_manager import json_load
 
 from exception import ArgsException, ExceptionCode
 from service import serviceAI, serviceSyncData
 import utils
 
+import config
+from config import Config
 
 bp_ai = Blueprint('ai', __name__)
+
           
 @bp_ai.route('/inference/batch', methods=['POST'])
 def batchInference():
     task_type = request.args.get('task_type', type=int)
     if task_type is None:
         raise ArgsException(f"task_type is missing")
+    
+    confidence = utils.getOrDefault(request.args.get('confidence', type=float))
+
     images = request.files.getlist("images")
+
     if len(images) == 0:
         raise ArgsException(f"at leat 1 image file is required")
 
-    result = serviceAI.inferenceBatch(task_type,images)
+    result = serviceAI.inferenceBatch(task_type,images,confidence)
     
     if result is None:        
         raise ArgsException(f"inference error") 
@@ -56,7 +64,10 @@ def activeLearningStart():
     for k,v in model_configs.items():
         model_config[k] = v
 
-    results = serviceAI.activeLearningStart(project_id,gpu_server=1,gpu_id=1)
+    results = serviceAI.activeLearningStart(project_id=project_id,
+                                            model_config = model_config,
+                                            gpu_server=1,
+                                            gpu_id=0)
     
     if gpu_server == 0:
         results["server"] = "192.168.0.2"
@@ -72,7 +83,11 @@ def activeLearningStatus():
     if project_id is None:
         raise ArgsException(f"project_id is missing")
     
-    results = serviceAI.activeLearningStatus(project_id)
+    task_type = request.args.get('task_type', type=str)
+    if task_type is None:
+        raise ArgsException(f"task_type is missing")
+    
+    results = serviceAI.activeLearningStatus(project_id,task_type)
     return Response(response=json.dumps(results, ensure_ascii=False))
 
 @bp_ai.route('/model/search', methods=['GET'])
@@ -81,7 +96,11 @@ def searchModels():
     if project_id is None:
         raise ArgsException(f"project_id is missing")
     
-    results = serviceAI.getModelList(project_id)
+    task_type = request.args.get('task_type', type=str)
+    if task_type is None:
+        raise ArgsException(f"task_type is missing")
+    
+    results = serviceAI.getModelList(project_id,task_type)
     return Response(response=json.dumps(results, ensure_ascii=False))
 
 @bp_ai.route('/model/logs', methods=['GET'])
@@ -127,20 +146,21 @@ def getModelExport():
 
 @bp_ai.route('/inference/OB', methods=['POST'])
 def inferenceOB():
-   
     project_id = utils.getOrDefault(request.args.get('project_id', type=int))
     if project_id is None:
         raise ArgsException(f"project_id is missing")
-    
+
+    confidence = utils.getOrDefault(request.args.get('confidence', type=float))
+
     is_batch = request.args.get('is_batch', default = False,type=bool)
-    
+
     if is_batch:
         listOfFiles = ast.literal_eval(request.args.get('imagefileList'))
         imagefileList = utils.getOrDefault(listOfFiles)
         if imagefileList is None:
             raise ArgsException(f"imagefileList is missing")
         
-        result = serviceAI.inferenceOD(project_id, listOfFiles, is_batch)
+        result = serviceAI.inferenceOD(project_id,confidence, listOfFiles, is_batch)
         if result is None:        
             raise ArgsException(f"inference object detecting - bbox error")
     else:  
@@ -148,12 +168,12 @@ def inferenceOB():
         if imagefile is None:
             raise ArgsException(f"imagefile is missing")
 
-        result = serviceAI.inferenceOD(project_id, imagefile)
+        result = serviceAI.inferenceOD(project_id,confidence, imagefile)
         if result is None:        
             raise ArgsException(f"inference object detecting - bbox error")
-    
+
     print(f" ==> InferenceOB result : {result}")
-    
+
     return Response(response=json.dumps(result, cls=serviceAI.NumpyEncoder, ensure_ascii=False))
 
 @bp_ai.route('/inference/IS', methods=['POST'])
@@ -163,13 +183,15 @@ def inferenceIS():
     if project_id is None:
         raise ArgsException(f"project_id is missing")
     
+    confidence = utils.getOrDefault(request.args.get('confidence', type=float))
+    
     is_batch = request.args.get('is_batch', default = False,type=bool)
     if is_batch:
         listOfFiles = ast.literal_eval(request.args.get('imagefileList'))
         imagefileList = utils.getOrDefault(listOfFiles)
         if imagefileList is None:
             raise ArgsException(f"imagefileList is missing")
-        result = serviceAI.inferenceIS(project_id, listOfFiles, is_batch)
+        result = serviceAI.inferenceIS(project_id,confidence, listOfFiles, is_batch)
         if result is None:        
             raise ArgsException(f"inference IS detecting - IS error")
     else:  
@@ -177,7 +199,7 @@ def inferenceIS():
         if imagefile is None:
             raise ArgsException(f"imagefile is missing")
 
-        result = serviceAI.inferenceIS(project_id, imagefile)
+        result = serviceAI.inferenceIS(project_id,confidence, imagefile)
         if result is None:        
             raise ArgsException(f"inference IS detecting - IS error")
     
@@ -192,13 +214,15 @@ def inferenceSES():
     if project_id is None:
         raise ArgsException(f"project_id is missing")
     
+    confidence = utils.getOrDefault(request.args.get('confidence', type=float))
+    
     is_batch = request.args.get('is_batch', default = False,type=bool)
     if is_batch:
         listOfFiles = ast.literal_eval(request.args.get('imagefileList'))
         imagefileList = utils.getOrDefault(listOfFiles)
         if imagefileList is None:
             raise ArgsException(f"imagefileList is missing")
-        result = serviceAI.inferenceSES(project_id, listOfFiles, is_batch)
+        result = serviceAI.inferenceSES(project_id,confidence, listOfFiles, is_batch)
         if result is None:
             raise ArgsException(f"inference SES detecting - SES error")
     else:
@@ -206,11 +230,70 @@ def inferenceSES():
         if imagefile is None:
             raise ArgsException(f"imagefile is missing")
 
-        result = serviceAI.inferenceSES(project_id, imagefile)
+        result = serviceAI.inferenceSES(project_id,confidence,imagefile)
         if result is None:        
             raise ArgsException(f"inference SES detecting - SES error")
     
     print(f" ==> inferenceSegment result : {result}")
+    
+    return Response(response=json.dumps(result, cls=serviceAI.NumpyEncoder, ensure_ascii=False))
+
+@bp_ai.route('/inference/HD', methods=['POST'])
+def inferenceHD():
+   
+    project_id = utils.getOrDefault(request.args.get('project_id', type=int))
+
+    if project_id is None:
+        raise ArgsException(f"project_id is missing")
+    
+    confidence = utils.getOrDefault(request.args.get('confidence', type=float))
+    
+    is_batch = request.args.get('is_batch', default = False,type=bool)
+    if is_batch:
+        listOfFiles = ast.literal_eval(request.args.get('imagefileList'))
+        imagefileList = utils.getOrDefault(listOfFiles)
+        if imagefileList is None:
+            raise ArgsException(f"imagefileList is missing")
+        result = serviceAI.inferenceHD(project_id,confidence,listOfFiles, is_batch)
+        if result is None:        
+            raise ArgsException(f"inference HD detecting - HD error")
+    else:  
+        imagefile = utils.getOrDefault(request.args.get('imagefile'))
+        if imagefile is None:
+            raise ArgsException(f"imagefile is missing")
+
+        result = serviceAI.inferenceHD(project_id,confidence,imagefile)
+        if result is None:
+            raise ArgsException(f"inference HD detecting - HD error")
+    
+    print(f" ==> inferenceHuman result : {result}")
+    
+    return Response(response=json.dumps(result, cls=serviceAI.NumpyEncoder, ensure_ascii=False))
+
+@bp_ai.route('/model/upload', methods=['POST'])
+def loadModeltoInference():
+    project_id = utils.getOrDefault(request.args.get('project_id', type=int))
+    if project_id is None:
+        raise ArgsException(f"project_id is missing")
+    
+    task_type = utils.getOrDefault(request.args.get('task_type', type=str))
+    if task_type is None:
+        raise ArgsException(f"task_type is missing")
+    
+    result = serviceAI.loadModel(project_id,task_type)
+    
+    return Response(response=json.dumps(result, cls=serviceAI.NumpyEncoder, ensure_ascii=False))
+
+@bp_ai.route('/model/unload', methods=['POST'])
+def unloadModeltoInference():
+    project_id = utils.getOrDefault(request.args.get('project_id', type=int))
+    if project_id is None:
+        raise ArgsException(f"project_id is missing")
+    task_type = utils.getOrDefault(request.args.get('task_type', type=str))
+    if task_type is None:
+        raise ArgsException(f"task_type is missing")
+    
+    result = serviceAI.unloadModel(project_id,task_type)
     
     return Response(response=json.dumps(result, cls=serviceAI.NumpyEncoder, ensure_ascii=False))
 

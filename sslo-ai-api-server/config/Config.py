@@ -5,7 +5,7 @@ class Config(object):
     TESTING = False
 
     HOST="0.0.0.0"
-    PORT=8828  
+    PORT=8838  
     
     DATABASE = {
         "user" : "sslo_user", 

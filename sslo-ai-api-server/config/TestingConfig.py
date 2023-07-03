@@ -6,7 +6,7 @@ class TestingConfig(Config):
     DEBUG=True
     
     HOST="0.0.0.0"
-    PORT=8828  
+    PORT=8838  
     
     DATABASE = {
         "user" : "sslo_user", 
@@ -26,6 +26,7 @@ class TestingConfig(Config):
     # data dir            
     BASE_DIR="../sslo-data-ai"
     AI_BASE_DIR="../sslo-data-ai"
+    # 
     
     # gpu server adress
     GPU_SERVER_1 = "192.168.0.2" 
@@ -35,9 +36,7 @@ class TestingConfig(Config):
     AI_CORE_DIR = "/solution_ai_model"
 
     # trained ai model repository
-    AI_TRAINED_MODEL_REPO = AI_CORE_DIR +"/models_trained"
+    AI_TRAINED_MODEL_REPO = AI_CORE_DIR +"/models_trained/"
 
     # servable ai model repository
-    AI_SERVABLE_MODEL_REPO = AI_CORE_DIR +"/models_servable"
-    
-    
+    AI_SERVABLE_MODEL_REPO = AI_CORE_DIR +"/models_servable/"

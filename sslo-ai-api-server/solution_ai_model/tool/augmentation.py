@@ -80,7 +80,9 @@ class augmentator:
             anns = coco_annotation.loadAnns(ann_ids)
             
             img_file_name = [imginfo["file_name"].split("/")[-1] for imginfo in coco_data["images"] if imginfo["id"] == imgids[i]][0]
+
             for j in range(len(anns)):
+                print(f"\n------------------------\n anns[j]:{anns[j]}\n------------------------\n")
                 if self.task == 'seg':
                     cat_list.append(anns[j]["category_id"])
                     mask_list.append(coco_annotation.annToMask(anns[j]))
